@@ -20,7 +20,14 @@ client_scripts {
 
 server_script 'server/main.lua'
 
+ui_page 'html/index.html'
+
 files {
+    'html/index.html',
+    'html/vue.min.js',
+    'html/script.js',
+    'html/fingerprint.png',
+    'html/main.css',
     'config/client.lua',
     'locales/*.json',
 }
