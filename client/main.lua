@@ -130,7 +130,7 @@ local function renderVehicleInfo(vehicle)
     })
 end
 
-RegisterNetEvent('heli:spotlight', function(serverId, state)
+RegisterNetEvent('qbx_helicam:client:toggledSpotlight', function(serverId, state)
     SetVehicleSearchlight(GetVehiclePedIsIn(GetPlayerPed(GetPlayerFromServerId(serverId)), false), state, false)
 end)
 
@@ -220,7 +220,7 @@ local function handleInVehicle()
 
     if IsControlJustPressed(0, toggleSpotlight) and (cache.seat == -1 or cache.seat == 0) then
         spotlightState = not spotlightState
-        TriggerServerEvent('heli:spotlight', spotlightState)
+        TriggerServerEvent('qbx_helicam:server:toggleSpotlight', spotlightState)
         PlaySoundFrontend(-1, 'SELECT', 'HUD_FRONTEND_DEFAULT_SOUNDSET', false)
     end
 
